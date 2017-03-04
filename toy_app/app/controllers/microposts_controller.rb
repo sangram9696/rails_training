@@ -10,8 +10,9 @@ class MicropostsController < ApplicationController
   # GET /microposts/1
   # GET /microposts/1.json
   def show
-  end
+     @all_comments=Comment.where(micropost_id: params[:id])
 
+  end
   # GET /microposts/new
   def new
     @micropost = Micropost.new

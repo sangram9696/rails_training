@@ -10,5 +10,17 @@
   <%= @micropost.user_id %>
 </p>
 
+<h2><%= @micropost.comments.count %> Comments</h2>
+
+<% @all_comments.each do |comment| %>
+   Name:- <%= comment.name %>
+   <br>
+   Comment:- <%= comment.body %>
+   <br><br>
+<% end %>
+
+  <h3>Add a comments: </h3>
+<%= render 'comments/form' %>
+
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |
 <%= link_to 'Back', microposts_path %>
