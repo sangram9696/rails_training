@@ -10,7 +10,7 @@ class MicropostsController < ApplicationController
   # GET /microposts/1
   # GET /microposts/1.json
   def show
-     @all_comments=Comment.where(micropost_id: params[:id])
+     @all_comments=Comment.where(micropost_id: params[:id]).reorder('id DESC')
 
   end
   # GET /microposts/new

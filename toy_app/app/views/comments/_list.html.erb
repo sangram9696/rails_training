@@ -1,0 +1,15 @@
+<h2><%= @micropost.comments.count %> Comments</h2>
+
+<% @all_comments.each do |comment| %>
+   Name:- <%= comment.name %>
+   <br>
+   Comment:- <%= comment.body %>
+    <%= link_to 'Edit', edit_micropost_comment_path(comment.micropost, comment)%>
+    <%= link_to 'Delete', [comment.micropost, comment],
+               :method => :delete,
+               data: { confirm: 'Are you sure?' }
+                %>
+
+   <br><br>
+<% end %>
+  <h3>Add a comments: </h3>
